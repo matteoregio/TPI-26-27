@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio Feedback</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h1>BENVENUTI</h1>
+    <form id="form">
+        <fieldset>
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome">
+        </fieldset>
+        <br>
+        <fieldset>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email">
+        </fieldset>
+        <br>
+        <fieldset>
+            <label for="data">Data:</label><br>
+            <input type="date" id="data" name="data">
+        </fieldset>
+        <br>
+        <fieldset>
+            <label for="ora">Ora:</label><br>
+            <input type="time" id="ora" name="ora">
+        </fieldset>
+        <br>
+        <fieldset>
+            <label for="selezione">Tipo di feedback</label><br>
+            <select id="selezione" name="selezione">
+                <option value="op1">Positivo</option>
+                <option value="op2">Indifferente</option>
+                <option value="op3">Negativo</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <label for="messaggio">Messaggio:</label><br>
+            <textarea name="messaggio" rows="5" cols="10"></textarea>
+        </fieldset>
+        <br>
+        <fieldset>
+            <label for="check">Iscriviti alla Newsletter</label>
+            <input type="checkbox" id="check" name="check">
+        </fieldset>
+        <br>
+
+        <button>Invia feedback</button>
+        <br>
+
+
+    </form>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Data</th>
+                <th>Ora</th>
+                <th>Tipo di feedback</th>
+                <th>Messaggio</th>
+                <th>Iscrizione</th>
+            </tr>
+        </thead>
+    </table>
+
+    
+</body>
+</html>
