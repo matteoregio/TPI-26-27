@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
         <br>
         <fieldset>
             <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email">
+            <input type="email" id="email" name="email">
         </fieldset>
         <br>
         <fieldset>
@@ -33,15 +33,15 @@
         <fieldset>
             <label for="selezione">Tipo di feedback</label><br>
             <select id="selezione" name="selezione">
-                <option value="op1">Positivo</option>
-                <option value="op2">Indifferente</option>
-                <option value="op3">Negativo</option>
+                <option value="Positivo">Positivo</option>
+                <option value="Indifferente">Indifferente</option>
+                <option value="Negativo">Negativo</option>
             </select>
         </fieldset>
         <br>
         <fieldset>
             <label for="messaggio">Messaggio:</label><br>
-            <textarea name="messaggio" rows="5" cols="10"></textarea>
+            <textarea id="messaggio" name="messaggio" rows="5" cols="30"></textarea>
         </fieldset>
         <br>
         <fieldset>
@@ -50,11 +50,10 @@
         </fieldset>
         <br>
 
-        <button>Invia feedback</button>
-        <br>
-
-
+        <button type="submit">Invia feedback</button>
     </form>
+
+    <br>
 
     <table border="2">
         <thead>
@@ -66,10 +65,11 @@
                 <th>Tipo di feedback</th>
                 <th>Messaggio</th>
                 <th>Iscrizione</th>
+                <th>Azioni</th>
             </tr>
         </thead>
+        <tbody id="tabellaFeedback"></tbody>
     </table>
 
-    
 </body>
 </html>

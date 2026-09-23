@@ -1,13 +1,10 @@
 const form = document.getElementById("form");
-const messaggio = document.getElementById("messaggio");
 const tabella = document.getElementById("tabellaFeedback");
 
 form.addEventListener("submit", gestisciSubmit);
 
-const dati = [];
-
-function gestisciSubmit(event){
-    event.preventDefaul();
+function gestisciSubmit(event) {
+    event.preventDefault();
 
     const nome = document.getElementById("nome").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -17,23 +14,32 @@ function gestisciSubmit(event){
     const messaggio = document.getElementById("messaggio").value.trim();
     const newsletter = document.getElementById("check").checked;
 
-    if(!nome || !email || !data || !ora || !selezione || !messaggio){
-        alert("ATTENTO MALINTEZIONATO, NON HAI COMPILATO TUTTI I CAMPI SVEGLIATI E RILEGGI (babbo)")
+    if (!nome || !email || !data || !ora || !selezione || !messaggio) {
+        alert("Attenzione: devi compilare tutti i campi del modulo.");
         return;
     }
 
-    const iscrizione = newsletter ? "Si" : "No";
-    
-    const riga = document.createElement("tr");//Crea le righe nella tabella
+    const iscrizione = newsletter ? "Sì" : "No";
 
-    const dato = {
-        nome,
-        email,
-        data,
-        ora,
-        selezione,
-        messaggio,
-        iscrizione
-    };
+    const valori = [nome, email, data, ora, selezione, messaggio, iscrizione];
 
+    const riga = document.createElement("tr");
+
+    for (let i = 0; i < valori.length; i++) {
+        const cella = document.createElement("td");
+        cella.textContent = valori[i]; // Corretto: textContent (C maiuscola)
+        riga.appendChild(cella);
+    }
+
+    const cellaAzioni = document.createElement("td");
+    const bottone = document.createElement("button");
+
+    bottone.textContent = "Elimina";
+    bottone.addEventListener("click", function () {
+        riga.remove();
+    });
+
+    cellaAzioni.appendChild(bottone);
+    riga.appendChild(cellaAzioni);
+    tabella.appendChild(riga);
 }
