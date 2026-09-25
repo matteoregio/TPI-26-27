@@ -27,7 +27,7 @@ function gestisciSubmit(event) {
 
     for (let i = 0; i < valori.length; i++) {
         const cella = document.createElement("td");
-        cella.textContent = valori[i]; // Corretto: textContent (C maiuscola)
+        cella.textContent = valori[i]; 
         riga.appendChild(cella);
     }
 
